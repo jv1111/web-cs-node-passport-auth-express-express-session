@@ -7,6 +7,7 @@ const app = express();
 // ----------Config----------------
 connectDb();
 app.use(express.json());
+require('./appSession')(app);//express session middleware
 
 // -----------routes----------------
 app.use('/user', UserRoute);
