@@ -3,7 +3,7 @@ const session = require('express-session');
 const oneDay = 1000 * 60 * 60 * 24;
 module.exports = (app) => {
     app.use(session({
-        secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+        secret: process.env.SECRET,
         saveUninitialized: true,
         cookie: {
             httpOnly: true,
