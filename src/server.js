@@ -1,9 +1,15 @@
 const express = require('express');
-const connectDb = require('./db'); 
+const connectDb = require('./db');
+const UserRoute = require('./routes/UserRoute');
 require('dotenv').config();//load .env variables
 const app = express();
 
+// ----------Config----------------
 connectDb();
+app.use(express.json());
+
+// -----------routes----------------
+app.use('/user', UserRoute);
 
 // start the server
 app.listen(process.env.PORT, () => {
