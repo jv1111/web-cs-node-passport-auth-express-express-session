@@ -14,6 +14,17 @@ const register = async (req, res) => {
     }
 }
 
+const login = async (req, res) => {
+    req.session.user = "jeremy";
+    res.send("success");
+}
+const getSession = async (req, res) => {
+    console.log(req.session);
+    res.send("success");
+}
+
 module.exports = {
-    register
+    register,
+    login,
+    getSession
 }
